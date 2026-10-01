@@ -1,0 +1,12 @@
+[
+    {
+        "testTitle": "Validar registro de trabalho feito por aluno novo com sucesso",
+        "registroTrabalho": {
+            "disciplinaId": "disciplina-programacao-web",
+            "titulo": "Atividade Automação API",
+            "descricao": "Resolução do Trabalho de Conclusão da Disciplina",
+            "status": "entregue"
+        },
+        "statusCodeEsperado": 201
+    }
+]
