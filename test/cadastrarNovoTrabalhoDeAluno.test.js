@@ -32,7 +32,11 @@ describe('Registrar Novos trabalhos como Aluno', () => {
             .get("/api/admin/disciplinas")
             .set('Authorization', tokenAdmin)
 
-            const disciplina = listaDeDisciplinas.body[0].id
+            const disciplinaDaFixture = listaDeDisciplinas.body
+                .find(d => d.id === testeRegistroTrabalho.registroTrabalho.disciplinaId)
+
+            expect(disciplinaDaFixture, 'disciplina da fixture não existe no banco').to.exist
+            const disciplina = disciplinaDaFixture.id
 
             await api()
             .post(`/api/admin/disciplinas/${disciplina}/matriculas`)
